@@ -1,3 +1,5 @@
+package projectone;
+
 public enum Location {
     BRIDGEWATER("08807", "Somerset"),
     EDISON("08837", "Middlesex"),

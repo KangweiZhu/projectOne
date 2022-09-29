@@ -1,3 +1,5 @@
+package projectone;
+
 public class TestBed {
     protected static final int GREATER = 1;
     protected static final int EQUAL = 0;

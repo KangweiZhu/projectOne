@@ -1,4 +1,9 @@
+package projectone;
+
 public class Member implements Comparable<Member> {
+    private final int SMALLER = -1;
+    private final int EQUAL = 0;
+    private final int GREATER = 1;
     private String fname;
     private String lname;
     private Date dob;
@@ -29,42 +34,22 @@ public class Member implements Comparable<Member> {
 
     @Override
     public String toString() {
-        return this.fname + " " + this.lname + ", " + this.dob.toString() + ", Member expires "
-                + this.expire.toString() + ", Location: " + this.location + ", "
+        return this.fname + " " + this.lname + ", " + this.dob.toString() + ", projectone.Member expires "
+                + this.expire.toString() + ", projectone.Location: " + this.location + ", "
                 + this.location.getZipCode() + ", " + this.location.getCounty();
     }
 
     @Override
     public boolean equals(Object obj) {
-        //returns true if the two first names, last names and dates of birth are equal.
         if (obj instanceof Member objMember) {
             boolean isFNameSame = this.fname.equalsIgnoreCase(objMember.fname);
             boolean isLNameSame = this.lname.equalsIgnoreCase(objMember.lname);
             boolean isDobSame = this.getDob().getDay() == objMember.getDob().getDay() &&
                     this.getDob().getMonth() == objMember.getDob().getMonth() &&
                     this.getDob().getYear() == objMember.getDob().getYear();
-//            System.out.println(isFNameSame+", "+isLNameSame+", "+isDobSame);
             return isFNameSame && isLNameSame && isDobSame;
         }
         return false;
-//        if (obj instanceof Member objMember) {
-//            String first = this.fname + this.lname;
-//            String second = objMember.fname + objMember.lname;
-//            int i = 0;
-//            if(first.length() != second.length()){
-//                return false;
-//            }
-//            while (i < first.length()) {
-//                if(first.charAt(i) != second.charAt(i)){
-//                    return false;
-//                }
-//                i++;
-//            }
-//            return this.getDob().getDay() == objMember.getDob().getDay() &&
-//                    this.getDob().getMonth() == objMember.getDob().getMonth() &&
-//                    this.getDob().getYear() == objMember.getDob().getYear();
-//        }
-//        return false;
     }
 
     public String getFname() {
@@ -112,36 +97,12 @@ public class Member implements Comparable<Member> {
         String first = (this.lname + this.fname).toLowerCase();
         String second = (member.lname + member.fname).toLowerCase();
         if (first.compareTo(second) > 0) {
-            return 1;
+            return GREATER;
         } else if (first.compareTo(second) == 0) {
-            return 0;
+            return EQUAL;
         } else {
-            return -1;
+            return SMALLER;
         }
-//        System.out.println("first: "+first+", Second: "+second);
-//        int maxLength;
-//        boolean maxFirst = false;
-//        if(first.length() < second.length()){
-//            maxLength = first.length();
-//            maxFirst = true;
-//        }else {
-//            maxLength = second.length();
-//        }
-//        System.out.println("MAxlength: "+maxLength);
-//        for(int i = 0; i < maxLength; i++){
-//            if(first.charAt(i) > second.charAt(i)){
-//                return 1;
-//            } else if (first.charAt(i) < second.charAt(i)) {
-//                return -1;
-//            }
-//        }
-//        if(first.length() > second.length()){
-//            return 1;
-//        } else if (first.length() < second.length()) {
-//            return -1;
-//        }else {
-//            return 0;
-//        }
     }
 
     public static void main(String[] args) {

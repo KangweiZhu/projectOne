@@ -1,3 +1,5 @@
+package projectone;
+
 public class MemberDatabase {
     public static final int NOT_FOUND = -1;
     private static final int INCREMENT = 4;
@@ -65,7 +67,7 @@ public class MemberDatabase {
 
     public void print() {
         if (size == 0) {
-            System.out.println("Member database is empty!");
+            System.out.println("projectone.Member database is empty!");
         } else {
             for (int i = 0; i < size; i++) {
                 System.out.println(mlist[i].toString());
@@ -73,7 +75,7 @@ public class MemberDatabase {
             System.out.println("-end of list-");
             System.out.println();
         }
-    } //print the array contents as is
+    }
 
     public void printSchedule() {
         for (int i = 0; i < size; i++) {
@@ -98,7 +100,7 @@ public class MemberDatabase {
                 mlist[j + 1] = currMember;
             }
             print();
-        } //sort by county and then zipcode
+        }
     }
 
     public void printByExpirationDate() {
@@ -135,7 +137,7 @@ public class MemberDatabase {
                 mlist[j + 1] = currMember;
             }
             print();
-        } //sort by the expiration date
+        }
     }
 
     public void printByName() {
@@ -154,7 +156,7 @@ public class MemberDatabase {
                 mlist[j + 1] = currMember;
             }
             print();
-        } //sort by last name and then first name
+        }
     }
 
 }

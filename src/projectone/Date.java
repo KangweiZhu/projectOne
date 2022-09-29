@@ -1,7 +1,12 @@
+package projectone;
+
 import java.util.Calendar;
 import java.util.StringTokenizer;
 
 public class Date implements Comparable<Date> {
+    private final int SMALLER = -1;
+    private final int EQUAL = 0;
+    private final int GREATER = 1;
     private int year;
     private int month;
     private int day;
@@ -35,15 +40,15 @@ public class Date implements Comparable<Date> {
         this.day = todaysDate.get(Calendar.DATE);
         this.month = todaysDate.get(Calendar.MONTH);
         this.year = todaysDate.get(Calendar.YEAR);
-    } //create an object with today’s date (see Calendar class)
+    }
 
     public Date(String date) {
-//        Date newDate = new Date();
+//        projectone.Date newDate = new projectone.Date();
         StringTokenizer st = new StringTokenizer(date, "/");
         this.month = Integer.parseInt(st.nextToken());
         this.day = Integer.parseInt(st.nextToken());
         this.year = Integer.parseInt(st.nextToken());
-    } //take “mm/dd/yyyy” and create a Date object
+    } //take “mm/dd/yyyy” and create a projectone.Date object
 
     public int getYear() {
         return year;
@@ -64,28 +69,28 @@ public class Date implements Comparable<Date> {
     @Override
     public int compareTo(Date date) {
         if (this.year > date.year) {
-            return 1;
+            return GREATER;
         } else if (this.year < date.year) {
-            return -1;
+            return SMALLER;
         } else {
             if (this.month > date.month) {
-                return 1;
+                return GREATER;
             } else if (this.month < date.month) {
-                return -1;
+                return SMALLER;
             } else {
                 if (this.day > date.day) {
-                    return 1;
+                    return GREATER;
                 } else if (this.day < date.day) {
-                    return -1;
+                    return SMALLER;
                 } else {
-                    return 0;
+                    return EQUAL;
                 }
             }
         }
     }
 
     public boolean isLeapYear() {
-        if (year % QUADRENNIAL == ZERO) {
+        if (year % QUADRENNIAL == 0) {
             if (year % CENTENNIAL == 0) {
                 if (year % QUATERCENTENNIAL == 0) {
                     return true;

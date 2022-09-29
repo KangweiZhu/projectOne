@@ -1,7 +1,23 @@
+package projectone;
+
 import java.util.Scanner;
 
 public class GymManager {
+
+    private final int ISNOTFOUND = -1;
+    private final int INDEX_OF_COMMAND = 0;
+    private final int INDEX_OF_FIRST_CLASS = 0;
+    private final int INDEX_OF_CLASS_NAME = 1;
+    private final int INDEX_OF_SECOND_CLASS = 1;
+    private final int INDEX_OF_FIRSTNAME = 1;
+    private final int INDEX_OF_LASTNAME = 2;
+    private final int INDEX_OF_THIRD_CLASS = 2;
+    private final int INDEX_OF_DOB = 3;
     private final int MAXCLASS_SIZE = 3;
+    private final int INDEX_OF_EXPIRATION_DATE = 4;
+    private final int INDEX_OF_LOCATION = 5;
+
+
     Scanner sc = new Scanner(System.in);
     MemberDatabase memberDB = new MemberDatabase();
     FitnessClass[] fitnessClasses = new FitnessClass[MAXCLASS_SIZE];
@@ -35,17 +51,17 @@ public class GymManager {
     }
 
     private void addClasses() {
-        fitnessClasses[0] = new FitnessClass("Pilates", "Jennifer", Time.Pilates, memberDB, fitnessClasses);
-        fitnessClasses[1] = new FitnessClass("Spinning", "Denise", Time.Spinning, memberDB, fitnessClasses);
-        fitnessClasses[2] = new FitnessClass("Cardio", "Kim", Time.Cardio, memberDB, fitnessClasses);
+        fitnessClasses[INDEX_OF_FIRST_CLASS] = new FitnessClass("Pilates", "Jennifer", Time.Pilates, memberDB, fitnessClasses);
+        fitnessClasses[INDEX_OF_SECOND_CLASS] = new FitnessClass("Spinning", "Denise", Time.Spinning, memberDB, fitnessClasses);
+        fitnessClasses[INDEX_OF_THIRD_CLASS] = new FitnessClass("Cardio", "Kim", Time.Cardio, memberDB, fitnessClasses);
     }
 
     private void A(String[] cmdLine) {             //add a member
-        String newLocation = cmdLine[5].toUpperCase();
-        Date dob = new Date(cmdLine[3]);
-        Date expireDate = new Date(cmdLine[4]);
+        String newLocation = cmdLine[INDEX_OF_LOCATION].toUpperCase();
+        Date dob = new Date(cmdLine[INDEX_OF_DOB]);
+        Date expireDate = new Date(cmdLine[INDEX_OF_EXPIRATION_DATE]);
         if (dob.isValidDob() && expireDate.isValidExpiration() && isValidLocation(newLocation)) {
-            Member member = new Member(cmdLine[1], cmdLine[2], dob, expireDate, Location.valueOf(newLocation));
+            Member member = new Member(cmdLine[INDEX_OF_FIRSTNAME], cmdLine[INDEX_OF_LASTNAME], dob, expireDate, Location.valueOf(newLocation));
             if (memberDB.add(member)) {
                 System.out.println(member.getFname() + " " + member.getLname() + " added");
             } else {
@@ -55,8 +71,8 @@ public class GymManager {
     }//        A April March 3/31/1990 6/30/2023 Piscataway
 
     private void R(String[] cmdLine) {             //remove a member
-        Date date = new Date(cmdLine[3]);
-        Member member = new Member(cmdLine[1], cmdLine[2], date);
+        Date date = new Date(cmdLine[INDEX_OF_DOB]);
+        Member member = new Member(cmdLine[INDEX_OF_FIRSTNAME], cmdLine[INDEX_OF_LASTNAME], date);
 
         if (memberDB.remove(member)) {  //found
             System.out.println(member.getFname() + " " + member.getLname() + " removed.");
@@ -97,12 +113,12 @@ public class GymManager {
     }
 
     private void C(String[] cmdLine) {
-        String fName = cmdLine[2];
-        String lName = cmdLine[3];
-        String className = cmdLine[1];
-        Date dob = new Date(cmdLine[4]);
+        String fName = cmdLine[INDEX_OF_FIRSTNAME + 1];
+        String lName = cmdLine[INDEX_OF_LASTNAME + 1];
+        String className = cmdLine[INDEX_OF_CLASS_NAME];
+        Date dob = new Date(cmdLine[INDEX_OF_DOB + 1]);
         Member findMember = new Member(fName, lName, dob);
-        if (memberDB.contains(findMember) != -1) {
+        if (memberDB.contains(findMember) != ISNOTFOUND) {
             findMember = memberDB.returnMember(memberDB.contains(findMember));
             for (int i = 0; i < fitnessClasses.length; i++) {
 //                System.out.println("                                    Tested: " + fitnessClasses[i].getFitnessClassName() + " i: "+ i);
@@ -118,10 +134,10 @@ public class GymManager {
     }
 
     private void D(String[] cmdLine) {
-        String className = cmdLine[1];
-        String fName = cmdLine[2];
-        String lName = cmdLine[3];
-        Date dob = new Date(cmdLine[4]);
+        String className = cmdLine[INDEX_OF_CLASS_NAME];
+        String fName = cmdLine[INDEX_OF_FIRSTNAME + 1];
+        String lName = cmdLine[INDEX_OF_LASTNAME + 1];
+        Date dob = new Date(cmdLine[INDEX_OF_DOB + 1]);
         Member member = new Member(fName, lName, dob);
         for (int i = 0; i < fitnessClasses.length; i++) {
             if (fitnessClasses[i].getFitnessClassName().equalsIgnoreCase(className)) {

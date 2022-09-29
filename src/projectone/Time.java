@@ -1,3 +1,5 @@
+package projectone;
+
 public enum Time {
     Pilates("9:30"),
     Spinning("14:00"),
