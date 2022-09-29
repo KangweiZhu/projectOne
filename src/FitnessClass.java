@@ -13,7 +13,7 @@ public class FitnessClass {
 
     public FitnessClass(String fitnessClassName, String instructorName, Time classTime, MemberDatabase memberDb, FitnessClass[] fitnessClasses) {
         this.fitnessClassName = fitnessClassName;
-        this.instructorName = instructorName;
+        this.instructorName = instructorName.toUpperCase();
         this.classTime = classTime;
         this.memberDb = memberDb;
         this.fitnessClasses = fitnessClasses;

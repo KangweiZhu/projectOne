@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class GymManager {
     private final int MAXCLASS_SIZE = 3;
     Scanner sc = new Scanner(System.in);
@@ -65,9 +66,9 @@ public class GymManager {
     }
 
     private void P() {
-        if (memberDB.getSize() == 0){
+        if (memberDB.getSize() == 0) {
             memberDB.print();
-        }else {
+        } else {
             System.out.println();
             System.out.println("-list of members-");
             memberDB.print();
@@ -92,6 +93,7 @@ public class GymManager {
         for (int i = 0; i < fitnessClasses.length; i++) {
             fitnessClasses[i].printSchedule();
         }
+        System.out.println();
     }
 
     private void C(String[] cmdLine) {

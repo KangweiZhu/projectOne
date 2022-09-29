@@ -111,11 +111,11 @@ public class Member implements Comparable<Member> {
     public int compareTo(Member member) {
         String first = (this.lname + this.fname).toLowerCase();
         String second = (member.lname + member.fname).toLowerCase();
-        if (first.compareTo(second) > 0){
+        if (first.compareTo(second) > 0) {
             return 1;
-        }else if(first.compareTo(second) == 0){
+        } else if (first.compareTo(second) == 0) {
             return 0;
-        }else{
+        } else {
             return -1;
         }
 //        System.out.println("first: "+first+", Second: "+second);
@@ -191,6 +191,6 @@ public class Member implements Comparable<Member> {
         testCandidateTwo = new Member("mike", "lee");
         expectedValue = TestBed.EQUAL;
         passTestCases += testBed.testMemberCompareTo(testCandidateOne, testCandidateTwo, testCaseNumber, expectedValue);
-        System.out.println("total test cases: 6, test cases passed: " +  passTestCases);
+        System.out.println("total test cases: 6, test cases passed: " + passTestCases);
     }
 }

@@ -52,7 +52,7 @@ public class MemberDatabase {
 
     public boolean remove(Member member) {
         int index = find(member);
-        if (index == -1) {
+        if (index == NOT_FOUND) {
             return false;
         } else {
             for (int i = index; (i + 1) < size; i++) {

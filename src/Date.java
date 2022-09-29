@@ -169,60 +169,60 @@ public class Date implements Comparable<Date> {
         //test case 1
         testBedCandidate = new Date("11/21/800");
         expectedValue = false;
-        passTestCases += testBed.testDateIsValid(testBedCandidate,testCaseNumber,expectedValue);
+        passTestCases += testBed.testDateIsValid(testBedCandidate, testCaseNumber, expectedValue);
 
         //test case 2
         testBedCandidate = new Date("2/29/2018");
-        passTestCases += testBed.testDateIsValid(testBedCandidate,testCaseNumber,expectedValue);
+        passTestCases += testBed.testDateIsValid(testBedCandidate, testCaseNumber, expectedValue);
 
         //test case 3
         testBedCandidate = new Date("13/29/2018");
-        passTestCases += testBed.testDateIsValid(testBedCandidate,testCaseNumber,expectedValue);
+        passTestCases += testBed.testDateIsValid(testBedCandidate, testCaseNumber, expectedValue);
 
         //test case 4
         testBedCandidate = new Date("3/32/2018");
-        passTestCases += testBed.testDateIsValid(testBedCandidate,testCaseNumber,expectedValue);
+        passTestCases += testBed.testDateIsValid(testBedCandidate, testCaseNumber, expectedValue);
 
         //test case 5
         testBedCandidate = new Date("4/31/2018");
-        passTestCases += testBed.testDateIsValid(testBedCandidate,testCaseNumber,expectedValue);
+        passTestCases += testBed.testDateIsValid(testBedCandidate, testCaseNumber, expectedValue);
 
         //test case 6
         testBedCandidate = new Date("2/31/2018");
-        passTestCases += testBed.testDateIsValid(testBedCandidate,testCaseNumber,expectedValue);
+        passTestCases += testBed.testDateIsValid(testBedCandidate, testCaseNumber, expectedValue);
 
         //test case 7
         testBedCandidate = new Date("3/-27/2018");
-        passTestCases += testBed.testDateIsValid(testBedCandidate,testCaseNumber,expectedValue);
+        passTestCases += testBed.testDateIsValid(testBedCandidate, testCaseNumber, expectedValue);
 
         //test case 8
         testBedCandidate = new Date("11/21/1905");
         expectedValue = true;
-        passTestCases += testBed.testDateIsValid(testBedCandidate,testCaseNumber,expectedValue);
+        passTestCases += testBed.testDateIsValid(testBedCandidate, testCaseNumber, expectedValue);
 
         //test case 9
         testBedCandidate = new Date("2/27/2018");
-        passTestCases += testBed.testDateIsValid(testBedCandidate,testCaseNumber,expectedValue);
+        passTestCases += testBed.testDateIsValid(testBedCandidate, testCaseNumber, expectedValue);
 
         //test case 10
         testBedCandidate = new Date("1/29/2018");
-        passTestCases += testBed.testDateIsValid(testBedCandidate,testCaseNumber,expectedValue);
+        passTestCases += testBed.testDateIsValid(testBedCandidate, testCaseNumber, expectedValue);
 
         //test case 11
         testBedCandidate = new Date("3/31/2018");
-        passTestCases += testBed.testDateIsValid(testBedCandidate,testCaseNumber,expectedValue);
+        passTestCases += testBed.testDateIsValid(testBedCandidate, testCaseNumber, expectedValue);
 
         //test case 12
         testBedCandidate = new Date("4/30/2018");
-        passTestCases += testBed.testDateIsValid(testBedCandidate,testCaseNumber,expectedValue);
+        passTestCases += testBed.testDateIsValid(testBedCandidate, testCaseNumber, expectedValue);
 
         //test case 13
         testBedCandidate = new Date("2/27/2018");
-        passTestCases += testBed.testDateIsValid(testBedCandidate,testCaseNumber,expectedValue);
+        passTestCases += testBed.testDateIsValid(testBedCandidate, testCaseNumber, expectedValue);
 
         //test case 14
         testBedCandidate = new Date("3/27/2018");
-        passTestCases += testBed.testDateIsValid(testBedCandidate,testCaseNumber,expectedValue);
-        System.out.println("total test cases: 14, test cases passed: " +  passTestCases);
+        passTestCases += testBed.testDateIsValid(testBedCandidate, testCaseNumber, expectedValue);
+        System.out.println("total test cases: 14, test cases passed: " + passTestCases);
     }
 }
