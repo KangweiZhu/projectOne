@@ -67,7 +67,6 @@ public class MemberDatabase {
         if (size == 0) {
             System.out.println("Member database is empty!");
         } else {
-            System.out.println();
             for (int i = 0; i < size; i++) {
                 System.out.println(mlist[i].toString());
             }
@@ -87,6 +86,7 @@ public class MemberDatabase {
         if (size == 0) {
             print();
         } else {
+            System.out.println();
             System.out.println("-list of members sorted by county and zipcode-");
             for (int i = 0; i < size; i++) {
                 Member currMember = mlist[i];
@@ -105,6 +105,7 @@ public class MemberDatabase {
         if (size == 0) {
             print();
         } else {
+            System.out.println();
             System.out.println("-list of members sorted by membership expiration date-");
             for (int i = 0; i < size; i++) {
                 Member currMember = mlist[i];
@@ -141,6 +142,7 @@ public class MemberDatabase {
         if (size == 0) {
             print();
         } else {
+            System.out.println();
             System.out.println("-list of members sorted by name, and last name-");
             for (int i = 0; i < size; i++) {
                 Member currMember = mlist[i];

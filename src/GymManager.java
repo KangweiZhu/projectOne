@@ -68,6 +68,7 @@ public class GymManager {
         if (memberDB.getSize() == 0){
             memberDB.print();
         }else {
+            System.out.println();
             System.out.println("-list of members-");
             memberDB.print();
         }
@@ -86,6 +87,7 @@ public class GymManager {
     }
 
     private void S() {
+        System.out.println();
         System.out.println("-Fitness Classes-");
         for (int i = 0; i < fitnessClasses.length; i++) {
             fitnessClasses[i].printSchedule();
