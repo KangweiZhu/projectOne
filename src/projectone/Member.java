@@ -224,7 +224,7 @@ public class Member implements Comparable<Member> {
      * It will create a testBed object, and use the testMemberCompareTo() to test if the compareTo method will give the
      * correct output
      *
-     * @param args
+     * @param args arguments that pass to the testbed main. At here should be no arguments.
      */
     public static void main(String[] args) {
         TestBed testBed = new TestBed();
@@ -234,42 +234,42 @@ public class Member implements Comparable<Member> {
         Member testCandidateOne;
         Member testCandidateTwo;
 
-        //test case 1   First member's name: Mike Lee, Second member's Mike Lee     expectedValue: 0
+        //test case 1
         testCandidateOne = new Member("Mike", "Lee");
         testCandidateTwo = new Member("Mike", "Lee");
         expectedValue = TestBed.EQUAL;
         passTestCases += testBed.testMemberCompareTo(testCandidateOne, testCandidateTwo, testCaseNumber, expectedValue);
         testCaseNumber++;
 
-        //test case 2   First member's name: Mike Lee, Second member's Bike Lee     expectedValue: 1
+        //test case 2
         testCandidateOne = new Member("Mike", "Lee");
         testCandidateTwo = new Member("Bike", "Lee");
         expectedValue = TestBed.GREATER;
         passTestCases += testBed.testMemberCompareTo(testCandidateOne, testCandidateTwo, testCaseNumber, expectedValue);
         testCaseNumber++;
 
-        //test case 3   First member's name: Bike Lee, Second member's Mike Lee     expectedValue: -1
+        //test case 3
         testCandidateOne = new Member("Bike", "Lee");
         testCandidateTwo = new Member("Mike", "Lee");
         expectedValue = TestBed.SMALLER;
         passTestCases += testBed.testMemberCompareTo(testCandidateOne, testCandidateTwo, testCaseNumber, expectedValue);
         testCaseNumber++;
 
-        //test case 4   First member's name: Mike Lee, Second member's Mikeee Lee     expectedValue: -1
+        //test case 4
         testCandidateOne = new Member("Mike", "Lee");
         testCandidateTwo = new Member("Mikeee", "Lee");
         expectedValue = TestBed.SMALLER;
         passTestCases += testBed.testMemberCompareTo(testCandidateOne, testCandidateTwo, testCaseNumber, expectedValue);
         testCaseNumber++;
 
-        //test case 5   First member's name: Mikeee Lee, Second member's Mike Lee     expectedValue: 1
+        //test case 5
         testCandidateOne = new Member("Mikeee", "Lee");
         testCandidateTwo = new Member("Mike", "Lee");
         expectedValue = TestBed.GREATER;
         passTestCases += testBed.testMemberCompareTo(testCandidateOne, testCandidateTwo, testCaseNumber, expectedValue);
         testCaseNumber++;
 
-        //test case 6   First member's name: MIKE LEE, Second member's mike lee     expectedValue: 0
+        //test case 6
         testCandidateOne = new Member("MIKE", "LEE");
         testCandidateTwo = new Member("mike", "lee");
         expectedValue = TestBed.EQUAL;

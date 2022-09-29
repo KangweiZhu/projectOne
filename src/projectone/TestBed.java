@@ -1,5 +1,10 @@
 package projectone;
 
+/**
+ * This class is for test uses. It implements the functionality of testing the Member class's compareTo method and
+ * testing the Date's class isValid
+ *
+ */
 public class TestBed {
     protected static final int GREATER = 1;
     protected static final int EQUAL = 0;
