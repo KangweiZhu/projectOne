@@ -181,7 +181,7 @@ public class FitnessClass {
     }
 
     /**
-     * Make a Member object check in this fitness class
+     * Make a Member object check in this fitness class, and print the commandline messages.
      *
      * @param member   A specific Member object.
      * @param className The name of the class that this member wants to check in.
