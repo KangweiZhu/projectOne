@@ -1,10 +1,9 @@
 package projectone;
 
 /**
- * This class is for test uses. It implements the functionality of testing the Member class's compareTo() method and
+ * The TestBed is for test uses. It implements the functionality of testing the Member class's compareTo() method and
  * testing the Date's class isValid() method.
- * <p>
- * This class and the TestBed object should only appear at the Date class's main method and Member class's main method.
+ * The TestBed class and the TestBed object should only appear at the Date class's main method and Member class's main method.
  *
  * @author Kangwei Zhu Michael ISRAEL
  */

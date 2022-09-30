@@ -1,7 +1,7 @@
 package projectone;
 
 /**
- * This class is for the creation and data manipulation of Member object.
+ * The Member class is for the creation and data manipulation of Member object.
  * A Member object could be viewed as a real person in the world. He should have first name, last name, date of birth.
  * And if this person is registered to a fitness class, he also should have expiration date and the location of the
  * fitness class he takes.
