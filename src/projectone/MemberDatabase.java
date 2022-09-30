@@ -9,7 +9,7 @@ public class MemberDatabase {
     public static final int NOT_FOUND = -1;
     private static final int INCREMENT = 4;
     private Member[] mlist;
-    private int size; // number of current Member objects that store in this database
+    private int size; // number of current Member objects that store in this database.
 
     /**
      * Initialize a newly created MemberDatabase object.
