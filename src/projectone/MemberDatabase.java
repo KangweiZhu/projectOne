@@ -21,7 +21,7 @@ public class MemberDatabase {
     }
 
     /**
-     * Find whether a Member object exists in this MemberDatabase object.
+     * This method is for finding whether a Member object exists in this MemberDatabase object.
      *
      * @param member a specific Member object.
      * @return Index of this Member in mlist if this Member does exist. If it not exists, return -1.
@@ -36,7 +36,7 @@ public class MemberDatabase {
     }
 
     /**
-     * Check whether the MemberDataBase contains a specific Member object.
+     * This method is for check whether the MemberDataBase contains a specific Member object.
      *
      * @param member a specific Member object.
      * @return Index of this Member in mlist if this Member does exist. If it not exists, return -1.
@@ -57,7 +57,7 @@ public class MemberDatabase {
     }
 
     /**
-     * Get the Member object in database through using its index in mlist array.
+     * This method is for getting the Member object in database through using its index in mlist array.
      *
      * @param index The index of this Member object in mlist.
      * @return Member object.
@@ -67,7 +67,7 @@ public class MemberDatabase {
     }
 
     /**
-     * get the number of Member object that currently stored in this database.
+     * Get the number of Member object that currently stored in this database.
      *
      * @return number of Member object stored in this database.
      */
