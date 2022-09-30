@@ -6,7 +6,7 @@ package projectone;
  * And if this person is registered to a fitness class, he also should have expiration date and the location of the
  * fitness class he takes.
  *
- * @author Michael ISRAEL, Kangwei Zhu
+ * @author Michael Israel, Kangwei Zhu
  */
 public class Member implements Comparable<Member> {
     private final int SMALLER = -1;
