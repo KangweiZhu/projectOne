@@ -60,14 +60,27 @@ public class MemberDatabase {
             for (int i = index; (i + 1) < size; i++) {
                 mlist[i] = mlist[i + 1];
             }
+            mlist[size] = null;
             size--;
         }
         return true;
     }
 
+    public void print(Member[] members) {
+        if (members.length == 0) {
+            System.out.println("Member database is empty!");
+        } else {
+            for (int i = 0; i < members.length; i++) {
+                System.out.println(members[i].toString());
+            }
+            System.out.println("-end of list-");
+            System.out.println();
+        }
+    }
+
     public void print() {
         if (size == 0) {
-            System.out.println("projectone.Member database is empty!");
+            System.out.println("Member database is empty!");
         } else {
             for (int i = 0; i < size; i++) {
                 System.out.println(mlist[i].toString());
@@ -76,7 +89,6 @@ public class MemberDatabase {
             System.out.println();
         }
     }
-
     public void printSchedule() {
         for (int i = 0; i < size; i++) {
             System.out.print("\t\t");
@@ -88,18 +100,26 @@ public class MemberDatabase {
         if (size == 0) {
             print();
         } else {
+            Member[] copyOfMlist = new Member[size];
+            copyArray(copyOfMlist,size);
             System.out.println();
             System.out.println("-list of members sorted by county and zipcode-");
-            for (int i = 0; i < size; i++) {
-                Member currMember = mlist[i];
-                int j = i - 1;
-                while (j >= 0 && (mlist[j].getLocation()).compareLocation(currMember) > 0) { //move smaller to the left
-                    mlist[j + 1] = mlist[j];
-                    j--;
+            for (int i = size - 1; i > 0; i--) {
+                for (int j = 0; j < i; j++) {
+                    if (copyOfMlist[j].getLocation().compareLocation(copyOfMlist[j + 1]) > 0) {
+                        Member temp = copyOfMlist[j];
+                        copyOfMlist[j] = copyOfMlist[j + 1];
+                        copyOfMlist[j + 1] = temp;
+                    }
                 }
-                mlist[j + 1] = currMember;
             }
-            print();
+            print(copyOfMlist);
+        }
+    }
+
+    public void copyArray(Member[] members, int limit){
+        for (int i = 0; i < limit; i++) {
+            members[i] = mlist[i];
         }
     }
 
@@ -107,36 +127,20 @@ public class MemberDatabase {
         if (size == 0) {
             print();
         } else {
+            Member[] copyOfMlist = new Member[size];
+            copyArray(copyOfMlist,size);
             System.out.println();
             System.out.println("-list of members sorted by membership expiration date-");
-            for (int i = 0; i < size; i++) {
-                Member currMember = mlist[i];
-                int j = i - 1;
-                while (j >= 0 && mlist[j].getExpire().getYear() >= currMember.getExpire().getYear()) { //move smaller to the left
-                    if (mlist[j].getExpire().getYear() == currMember.getExpire().getYear()) {
-                        if (mlist[j].getExpire().getMonth() == currMember.getExpire().getMonth()) {
-                            if (mlist[j].getExpire().getDay() == currMember.getExpire().getDay()) {
-                                break;
-                            } else if (mlist[j].getExpire().getDay() > currMember.getExpire().getDay()) {
-                                mlist[j + 1] = mlist[j];
-                                j--;
-                            } else {
-                                break;
-                            }
-                        } else if (mlist[j].getExpire().getMonth() > currMember.getExpire().getMonth()) {
-                            mlist[j + 1] = mlist[j];
-                            j--;
-                        } else {
-                            break;
-                        }
-                    } else {
-                        mlist[j + 1] = mlist[j];
-                        j--;
+            for (int i = size - 1; i > 0; i--) {
+                for (int j = 0; j < i; j++) {
+                    if (copyOfMlist[j].getExpire().compareTo(copyOfMlist[j + 1].getExpire()) > 0) {
+                        Member temp = copyOfMlist[j];
+                        copyOfMlist[j] = copyOfMlist[j + 1];
+                        copyOfMlist[j + 1] = temp;
                     }
                 }
-                mlist[j + 1] = currMember;
             }
-            print();
+            print(copyOfMlist);
         }
     }
 
@@ -144,18 +148,20 @@ public class MemberDatabase {
         if (size == 0) {
             print();
         } else {
+            Member[] copyOfMlist = new Member[size];
+            copyArray(copyOfMlist,size);
             System.out.println();
             System.out.println("-list of members sorted by name, and last name-");
-            for (int i = 0; i < size; i++) {
-                Member currMember = mlist[i];
-                int j = i - 1;
-                while (j >= 0 && mlist[j].compareTo(currMember) > 0) { //move smaller to the left
-                    mlist[j + 1] = mlist[j];
-                    j--;
+            for (int i = size - 1; i > 0; i--) {
+                for (int j = 0; j < i; j++) {
+                    if (copyOfMlist[j].compareTo(copyOfMlist[j + 1]) > 0) {
+                        Member temp = copyOfMlist[j];
+                        copyOfMlist[j] = copyOfMlist[j + 1];
+                        copyOfMlist[j + 1] = temp;
+                    }
                 }
-                mlist[j + 1] = currMember;
             }
-            print();
+            print(copyOfMlist);
         }
     }
 
