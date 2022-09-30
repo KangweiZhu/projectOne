@@ -168,8 +168,8 @@ public class Member implements Comparable<Member> {
      */
     @Override
     public String toString() {
-        return this.fname + " " + this.lname + ", " + this.dob.toString() + ", projectone.Member expires "
-                + this.expire.toString() + ", projectone.Location: " + this.location + ", "
+        return this.fname + " " + this.lname + ", " + this.dob.toString() + ", Member expires "
+                + this.expire.toString() + ", Location: " + this.location + ", "
                 + this.location.getZipCode() + ", " + this.location.getCounty();
     }
 
