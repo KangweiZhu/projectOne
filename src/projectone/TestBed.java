@@ -48,11 +48,11 @@ public class TestBed {
     /**
      * This method is for printing the test details of compareTo() method on command line.
      *
-     * @param testCandidateOne  The first member object.
-     * @param testCandidateTwo  The second member object.
-     * @param testCaseNum       The number of current test case.
-     * @param expectedValue     The result what you expect firstMember.compareTo(secondMember) will return.
-     * @param outputValue       The output when Member class's compareTo() method is called.
+     * @param testCandidateOne The first member object.
+     * @param testCandidateTwo The second member object.
+     * @param testCaseNum      The number of current test case.
+     * @param expectedValue    The result what you expect firstMember.compareTo(secondMember) will return.
+     * @param outputValue      The output when Member class's compareTo() method is called.
      */
     private void printTestMemberMsg(Member testCandidateOne, Member testCandidateTwo, int testCaseNum, int expectedValue, int outputValue) {
         System.out.println("----------------");
@@ -65,6 +65,7 @@ public class TestBed {
 
     /**
      * This method is for printing the test details of compareTo() method on command line.
+     *
      * @param testCandidate The Date object that are going to be tested.
      * @param testCaseNum   The number of current test case.
      * @param expectedValue The value what you expect Date.isValid() will produce.
